@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ProcureFlow - Modern Procurement OS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            },
+            colors: {
+              primary: '#6C47FF',
+              'primary-dark': '#5835FF',
+              surface: '#FFFFFF',
+              'surface-subtle': '#F8F9FC', // Slightly cooler white for tech feel
+              border: '#E2E4E9',
+            },
+            boxShadow: {
+              'card': '0 2px 8px rgba(0, 0, 0, 0.04), 0 0 1px rgba(0,0,0,0.1)',
+              'card-hover': '0 8px 24px rgba(0, 0, 0, 0.06), 0 0 1px rgba(0,0,0,0.1)',
+              'glow': '0 0 20px rgba(108, 71, 255, 0.15)',
+            },
+            animation: {
+              'flow': 'flow 2s linear infinite',
+              'flow-horiz': 'flow-horiz 2s linear infinite',
+              'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        font-family: 'Inter', sans-serif;
+        -webkit-font-smoothing: antialiased;
+        background-color: #F8F9FC;
+      }
+      
+      /* Tech Grid Background */
+      .bg-grid-pattern {
+        background-image: linear-gradient(to right, #e5e7eb 1px, transparent 1px),
+                          linear-gradient(to bottom, #e5e7eb 1px, transparent 1px);
+        background-size: 40px 40px;
+        mask-image: linear-gradient(to bottom, transparent, 10% black, 90% black, transparent);
+        -webkit-mask-image: linear-gradient(to bottom, transparent, 5% black, 95% black, transparent);
+      }
+
+      /* Data Flow Animations */
+      @keyframes flow {
+        0% { transform: translateY(-100%); opacity: 0; }
+        20% { opacity: 1; }
+        80% { opacity: 1; }
+        100% { transform: translateY(100%); opacity: 0; }
+      }
+      @keyframes flow-horiz {
+        0% { transform: translateX(-100%); opacity: 0; }
+        20% { opacity: 1; }
+        80% { opacity: 1; }
+        100% { transform: translateX(100%); opacity: 0; }
+      }
+
+      .animate-flow {
+        animation: flow 1.5s linear infinite;
+      }
+      .animate-flow-horiz {
+        animation: flow-horiz 1.5s linear infinite;
+      }
+      
+      /* Hide scrollbar for clean aesthetic in specific areas if needed */
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.555.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "recharts": "https://aistudiocdn.com/recharts@^3.5.1"
+  }
+}
+</script>
+</head>
+  <body class="bg-surface-subtle text-gray-900">
+    <div id="root"></div>
+  </body>
+</html>
